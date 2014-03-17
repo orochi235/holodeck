@@ -9,7 +9,7 @@ var behaviors = lib.behaviors;
 var aq = new ActionQueue();
 
 var players = [];
-for (var i = 0; i < 10 ; i++) {
+for (var i = 0; i < 3 ; i++) {
     players[i] = new Entity({
         behaviors: [behaviors.RussianRoulette],
         context: {

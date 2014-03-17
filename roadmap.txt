@@ -1,0 +1,71 @@
+AGENT
+	CoreStats
+	
+"Aspects" - mix-ins that add attributes, etc. to an agent.
+	Lists that can be added to (or modified?)
+		- Core stats - have cap and current value, can be derived from other core stats
+			- id
+			- type: integral, continuous, boolean
+			- floor/ceil (for numeric stats) 
+			- value (all)
+		- Behaviors
+			
+		- Methods - basically, public interfaces
+		- Attributes
+		- Abilities
+		- Needs
+		- Attributes
+		- Effects (passive)
+		- DEPENDENCIES - how to handle?
+
+"Aspects" for agents:
+	- Mortality
+		+ HP (core stat)
+		+ dead (attribute)
+		+ die (method)
+	
+	- Advanceable
+		+ level (core stat)
+		+ experience (core stat)
+		+ gainExp (method)
+		+ onLevelUp (triggered behavior)
+
+	- Combat
+		+ attack (core stat)
+		+ defense (core stat)
+		+ attack (ability)
+		+ defend (ability)
+		
+	- Dodger
+
+	- Blocker
+		
+	- Movement
+		speed/range core stats
+		+ move (ability)
+	
+	- Hungry
+		+ hunger (need)
+		+ eat (method)
+		+ metabolism (behavior)
+	
+	- Thirsty
+		+ thirst (need)
+		+ drink (method)
+		+ 
+		
+	- Equippable
+		equip/unequip/query current equipment
+		stat modifiers applied to equipment
+		
+	- Carrier
+		+ inventory (attribute)
+		+ pickUp (method)
+		+ drop (method)
+
+	- Poisonable
+	- Paralyzable
+	
+
+STAT MODIFIERS/BUFFS
+	

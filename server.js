@@ -30,5 +30,3 @@ var referee = new Entity({
     name: "Referee"
 });
 aq.register(referee);
-
-var triggered = new lib.TriggeredBehavior()

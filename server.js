@@ -9,7 +9,7 @@ var behaviors = lib.behaviors;
 var aq = new ActionQueue();
 
 var players = [];
-for (var i = 0; i < 3 ; i++) {
+for (var i = 0; i < 10 ; i++) {
     players[i] = new Entity({
         behaviors: [behaviors.RussianRoulette],
         context: {
@@ -30,3 +30,14 @@ var referee = new Entity({
     name: "Referee"
 });
 aq.register(referee);
+
+var agent = new lib.Agent({
+    facets: [lib.agent.facets.Mortal]
+});
+console.log("Just made a dude, and he has " + agent.getStat('hp') + " HP. Now on with the bloodsport!");
+
+// NEXT STEPS:
+// TODO: convert RussianRoulette and Referee from Behaviors to Facets
+// TODO: convert players and ref from Entity to Agent
+// TODO: implement support for types exposed by agent and facet (e.g. actions, needs, etc.)
+// TODO: implement and test the Mortal facet.

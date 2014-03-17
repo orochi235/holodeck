@@ -4,18 +4,19 @@ AGENT
 "Aspects" - mix-ins that add attributes, etc. to an agent.
 	Lists that can be added to (or modified?)
 		- Core stats - have cap and current value, can be derived from other core stats
-			- id
-			- type: integral, continuous, boolean
-			- floor/ceil (for numeric stats) 
-			- value (all)
-		- Behaviors
 			
-		- Methods - basically, public interfaces
-		- Attributes
-		- Abilities
-		- Needs
-		- Attributes
-		- Effects (passive)
+			// TODO: support for continuous and boolean stats
+			
+		- Actions
+		- Methods - basically, public interfaces to an agent
+		- Attributes - not sure what this entails, exactly, but inventory would be an example
+		- Abilities - actions
+		- Needs - linear values expressing how badly an agent needs a particular thing at the moment
+			- id
+			- floor/ceil
+			- incrementation mechanism
+			- behaviors triggered by threshold
+		- Effects (passive) - a layer of modifiers applied to base stats, etc. (e.g. a 10% hp buff)
 		- DEPENDENCIES - how to handle?
 
 "Aspects" for agents:
@@ -23,6 +24,7 @@ AGENT
 		+ HP (core stat)
 		+ dead (attribute)
 		+ die (method)
+		+ die (action, triggers when HP reaches zero)
 	
 	- Advanceable
 		+ level (core stat)
@@ -46,13 +48,16 @@ AGENT
 	
 	- Hungry
 		+ hunger (need)
-		+ eat (method)
+		+ eat (action)
 		+ metabolism (behavior)
 	
 	- Thirsty
 		+ thirst (need)
-		+ drink (method)
-		+ 
+		+ drink (action)
+	
+	- Weary
+		+ rest (need)
+		+ sleep (action)
 		
 	- Equippable
 		equip/unequip/query current equipment
@@ -60,11 +65,12 @@ AGENT
 		
 	- Carrier
 		+ inventory (attribute)
-		+ pickUp (method)
-		+ drop (method)
+		+ pickUp (action)
+		+ drop (actions)
 
 	- Poisonable
 	- Paralyzable
+	etc.
 	
 
 STAT MODIFIERS/BUFFS

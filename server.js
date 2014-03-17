@@ -1,8 +1,10 @@
 #!/usr/local/bin/node
 
-var Entity = require('./lib').entity;
-var ActionQueue = require('./lib').actionQueue;
-var behaviors = require('./lib').behaviors;
+var lib = require('./lib');
+
+var Entity = lib.Entity;
+var ActionQueue = lib.ActionQueue;
+var behaviors = lib.behaviors;
 
 var aq = new ActionQueue();
 
@@ -10,7 +12,10 @@ var players = [];
 for (var i = 0; i < 10 ; i++) {
     players[i] = new Entity({
         behaviors: [behaviors.RussianRoulette],
-        context: players,
+        context: {
+            aq: aq,
+            players: players
+        },
         name: "Contestant #" + i
     });
     aq.register(players[i]);
@@ -22,6 +27,8 @@ var referee = new Entity({
         aq: aq,
         players: players
     },
-    name: "Referee" + i
+    name: "Referee"
 });
 aq.register(referee);
+
+var triggered = new lib.TriggeredBehavior()

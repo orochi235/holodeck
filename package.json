@@ -1,0 +1,27 @@
+{
+  "name": "holodeck",
+  "version": "0.0.0",
+  "description": "This is an attempt at building a cloud-based game engine for sandbox environments like Dwarf Fortress, Minecraft and Prison Architect. The goal is to create a simple and extensible framework that makes it a lot easier for anyone with a little JavaScript experience to build simulated worlds.",
+  "main": "app.js",
+  "dependencies": {
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.5",
+    "babel": "^5.6.4"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel/register",
+    "start": "./node_modules/.bin/babel-node ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orochi235/holodeck.git"
+  },
+  "author": "Michael Baker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orochi235/holodeck/issues"
+  },
+  "homepage": "https://github.com/orochi235/holodeck"
+}

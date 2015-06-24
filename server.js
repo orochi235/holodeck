@@ -1,6 +1,7 @@
 #!/usr/local/bin/node
 
-var lib = require('./lib');
+import lib from './lib';
+//var lib = require('./lib');
 
 var Entity = lib.Entity;
 var ActionQueue = lib.ActionQueue;
